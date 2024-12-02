@@ -191,10 +191,41 @@ section:nth-child(even) {
 }
 
 /* Skills */
+.skill-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0;
+}
+
+.skill-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.skill-list li:last-child {
+    margin-bottom: 0;
+}
+
+.skill-list li i {
+    flex-shrink: 0;
+    width: 24px;
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.skill-list li:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+    transform: translateX(5px);
+}
+
 .skill-category {
+    background: white;
     padding: 2rem;
     border-radius: 12px;
-    background: white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin-bottom: 2rem;
     transition: var(--transition);
@@ -205,19 +236,11 @@ section:nth-child(even) {
     box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
-.skill-list li {
-    margin-bottom: 1rem;
-    padding-left: 1.5rem;
-    position: relative;
-    transition: var(--transition);
-}
-
-.skill-list li:before {
-    content: '•';
-    color: var(--accent-color);
-    position: absolute;
-    left: 0;
-    font-size: 1.2rem;
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 /* Contact Section */
@@ -271,42 +294,20 @@ section:nth-child(even) {
 }
 
 .achievement-list li {
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: flex-start;
+    margin-bottom: 0.8rem;
     line-height: 1.6;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
-.achievement-list li:last-child {
-    margin-bottom: 0;
+.achievement-list li:before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
-.achievement-list li i {
-    flex-shrink: 0;
-    margin-top: 0.25rem;
-    width: 20px;
-}
-
-.badge {
-    padding: 0.5rem 1rem;
-    font-weight: 500;
-    font-size: 0.9rem;
-    border-radius: 20px;
-    background-color: rgba(52, 152, 219, 0.1) !important;
-    color: var(--primary-color) !important;
-    transition: var(--transition);
-}
-
-.badge:hover {
-    background-color: rgba(52, 152, 219, 0.2) !important;
-    transform: translateY(-1px);
-}
-
-.card-title i {
-    opacity: 0.9;
-}
-
-/* Hover effects for list items */
 .achievement-list li {
     transition: var(--transition);
     padding: 0.5rem;
@@ -318,25 +319,19 @@ section:nth-child(even) {
     transform: translateX(5px);
 }
 
-/* Skills section enhancements */
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+/* Certification List */
+.certification-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
 }
 
-.skill-category {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: var(--transition);
-}
-
-.skill-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+.certification-list li:before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
 }
 
 /* Responsive Design */
@@ -415,17 +410,22 @@ section:nth-child(even) {
     font-weight: bold;
 }
 
-/* Certification List */
-.certification-list li {
-    margin-bottom: 0.8rem;
-    padding-left: 1.5rem;
-    position: relative;
+/* Badge */
+.badge {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    background-color: rgba(52, 152, 219, 0.1) !important;
+    color: var(--primary-color) !important;
+    transition: var(--transition);
 }
 
-.certification-list li:before {
-    content: '•';
-    color: var(--accent-color);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
+.badge:hover {
+    background-color: rgba(52, 152, 219, 0.2) !important;
+    transform: translateY(-1px);
+}
+
+.card-title i {
+    opacity: 0.9;
 }
