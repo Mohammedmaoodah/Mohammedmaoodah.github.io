@@ -214,24 +214,19 @@ section:nth-child(even) {
 
 .skill-list li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 1rem;
     padding: 0.5rem;
     border-radius: 8px;
     transition: var(--transition);
-    background: transparent;
-}
-
-.skill-list li:last-child {
-    margin-bottom: 0;
+    line-height: 1.4;
 }
 
 .skill-list li i {
-    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    width: 24px;
     color: var(--accent-color);
-    margin-right: 1rem;
-    width: 20px;
-    text-align: center;
 }
 
 .skill-list li:hover {
@@ -339,15 +334,20 @@ section:nth-child(even) {
         width: 150px;
         height: 150px;
         margin: 0 auto 1.5rem;
+        display: block;
     }
-
-    .skills-container {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    
+    #home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 100vh;
+        padding-top: 80px;
     }
-
-    .skill-list li, .certification-list li {
-        padding: 0.4rem;
+    
+    .skill-list li {
+        padding-right: 0.5rem;
     }
 }
 
