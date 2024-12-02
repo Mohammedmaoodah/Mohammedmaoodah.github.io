@@ -1,0 +1,431 @@
+/* Professional Website Styling */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --text-color: #2c3e50;
+    --light-bg: #f5f6fa;
+    --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--primary-color);
+    line-height: 1.3;
+}
+
+.display-4 {
+    font-size: calc(1.8rem + 1.5vw);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: calc(1rem + 0.2vw);
+    opacity: 0.9;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: calc(1.1rem + 0.2vw);
+}
+
+.nav-link {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem !important;
+    transition: var(--transition);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.nav-link {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem !important;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+/* Home Section */
+#home {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    color: white;
+}
+
+#home img {
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: var(--transition);
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#home img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Profile Image */
+.profile-img-container {
+    width: min(200px, 50vw);
+    height: min(200px, 50vw);
+    margin: 0 auto 2rem;
+    position: relative;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: var(--transition);
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Sections */
+section {
+    padding: 80px 0;
+    position: relative;
+}
+
+section:nth-child(even) {
+    background-color: var(--light-bg);
+}
+
+.section-heading {
+    font-size: calc(1.5rem + 1vw);
+    margin-bottom: 3rem;
+    position: relative;
+    text-align: center;
+}
+
+.section-heading:after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: var(--transition);
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Skills */
+.skill-category {
+    padding: 2rem;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.skill-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    transition: var(--transition);
+}
+
+.skill-list li:before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+/* Contact Section */
+.contact-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.contact-item {
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.contact-item i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 2rem;
+}
+
+.social-links a {
+    background-color: var(--accent-color);
+    color: white !important;
+    padding: 12px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    background-color: var(--primary-color);
+}
+
+/* Experience Section Enhancements */
+.achievement-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.achievement-list li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.6;
+}
+
+.achievement-list li:last-child {
+    margin-bottom: 0;
+}
+
+.achievement-list li i {
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+    width: 20px;
+}
+
+.badge {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    background-color: rgba(52, 152, 219, 0.1) !important;
+    color: var(--primary-color) !important;
+    transition: var(--transition);
+}
+
+.badge:hover {
+    background-color: rgba(52, 152, 219, 0.2) !important;
+    transform: translateY(-1px);
+}
+
+.card-title i {
+    opacity: 0.9;
+}
+
+/* Hover effects for list items */
+.achievement-list li {
+    transition: var(--transition);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.achievement-list li:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+    transform: translateX(5px);
+}
+
+/* Skills section enhancements */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.skill-category {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .skill-category {
+        padding: 1.5rem;
+    }
+
+    .navbar-collapse {
+        background: var(--primary-color);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-img-container {
+        width: 150px;
+        height: 150px;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .section-heading {
+        font-size: 1.8rem;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar {
+        display: none;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+
+    body {
+        color: black;
+    }
+}
+
+/* Achievement List */
+.achievement-list li {
+    margin-bottom: 0.8rem;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.achievement-list li:before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Certification List */
+.certification-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.certification-list li:before {
+    content: '•';
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
