@@ -60,4 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
             this.style.color = '';
         });
     });
+
+    // Get the navbar toggler and collapse element
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    // Add click event listener to all nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            // Check if navbar is expanded (mobile view)
+            if (window.getComputedStyle(navbarToggler).display !== 'none') {
+                // Close the navbar
+                navbarCollapse.classList.remove('show');
+            }
+        });
+    });
 });
