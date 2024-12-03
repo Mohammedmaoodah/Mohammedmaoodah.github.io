@@ -111,15 +111,16 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
+    border: 4px solid white;
 }
 
 .profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    transition: transform 0.3s ease;
+    object-position: center top;
     display: block;
+    transition: transform 0.3s ease;
 }
 
 .profile-img:hover {
