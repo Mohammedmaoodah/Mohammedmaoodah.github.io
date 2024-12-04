@@ -415,7 +415,41 @@ section:nth-child(even) {
 
 /* Social Links */
 .social-links {
-    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.social-link i {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+
+.social-link span {
+    font-size: 0.9rem;
+}
+
+.social-link.linkedin {
+    background-color: #0077b5;
+    box-shadow: 0 2px 5px rgba(0, 119, 181, 0.3);
+}
+
+.social-link.linkedin:hover {
+    background-color: #006396;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 119, 181, 0.4);
 }
 
 .social-links a {
@@ -435,6 +469,18 @@ section:nth-child(even) {
 .social-links a:hover {
     transform: translateY(-3px);
     background-color: var(--primary-color);
+}
+
+@media (max-width: 576px) {
+    .social-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .social-link {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* Download CV Button */
