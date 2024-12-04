@@ -376,6 +376,24 @@ section:nth-child(even) {
     background-color: var(--primary-color);
 }
 
+/* Download CV Button */
+#downloadCV {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#downloadCV:hover {
+    color: var(--accent-color) !important;
+}
+
+#downloadCV i {
+    transition: transform 0.3s ease;
+}
+
+#downloadCV:hover i {
+    transform: translateY(2px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {

@@ -75,4 +75,79 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Mobile menu functionality
+    const navLinks = document.querySelectorAll('.nav-link');
+    const downloadCV = document.getElementById('downloadCV');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
+        });
+    });
+
+    // CV Generation and Download
+    downloadCV.addEventListener('click', generateCV);
 });
+
+function generateCV() {
+    // Create a new div for CV content
+    const cvContent = document.createElement('div');
+    cvContent.className = 'cv-content';
+    
+    // Get all the necessary information from the website
+    const name = document.querySelector('.display-4').textContent;
+    const title = document.querySelector('#tagline').textContent;
+    const about = document.querySelector('#about p').textContent;
+    const skills = Array.from(document.querySelectorAll('#skills .skill-item')).map(skill => skill.textContent);
+    const certifications = Array.from(document.querySelectorAll('#certifications .certification-item')).map(cert => cert.textContent);
+    const contact = document.querySelector('#contact').textContent;
+
+    // Create CV HTML structure
+    cvContent.innerHTML = `
+        <div style="padding: 40px; max-width: 800px; margin: 0 auto; font-family: Arial, sans-serif;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h1 style="color: #2c3e50; margin-bottom: 10px;">${name}</h1>
+                <h2 style="color: #34495e; font-size: 1.2em; margin-bottom: 20px;">${title}</h2>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Professional Summary</h3>
+                <p style="line-height: 1.6;">${about}</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Skills</h3>
+                <ul style="list-style-type: none; padding: 0;">
+                    ${skills.map(skill => `<li style="margin-bottom: 5px;">• ${skill}</li>`).join('')}
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Certifications</h3>
+                <ul style="list-style-type: none; padding: 0;">
+                    ${certifications.map(cert => `<li style="margin-bottom: 5px;">• ${cert}</li>`).join('')}
+                </ul>
+            </div>
+
+            <div>
+                <h3 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Contact Information</h3>
+                <p style="line-height: 1.6;">${contact}</p>
+            </div>
+        </div>
+    `;
+
+    // PDF options
+    const opt = {
+        margin: 1,
+        filename: 'Mohammed_Maoodah_CV.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    // Generate PDF
+    html2pdf().set(opt).from(cvContent).save();
+}
