@@ -50,75 +50,101 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navigation */
 .navbar {
-    background-color: var(--primary-color) !important;
-    box-shadow: var(--box-shadow);
+    background-color: var(--primary-color);
     padding: 1rem 0;
+    transition: all 0.3s ease;
 }
 
 .navbar-brand {
-    font-weight: 700;
-    font-size: calc(1.1rem + 0.2vw);
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.navbar-nav {
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+    margin: 0 0.2rem;
+}
+
+.nav-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -0.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 15px;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .nav-link {
-    font-weight: 500;
-    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link i {
+    margin-right: 0.5rem;
     font-size: 0.9rem;
-    padding: 0.7rem 1rem !important;
-    transition: var(--transition);
-    color: white !important;
-    opacity: 0.9;
+    transition: transform 0.3s ease;
 }
 
 .nav-link:hover {
-    opacity: 1;
-    transform: translateY(-1px);
+    color: white !important;
 }
 
-.navbar-nav .nav-item {
-    display: flex;
-    align-items: center;
+.nav-link:hover i {
+    transform: translateY(-2px);
 }
 
-.navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.9) !important;
-    padding: 0.5rem 1rem !important;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    font-size: 0.95rem;
-}
+/* Mobile Navigation */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: var(--primary-color);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-.navbar-nav .nav-link:hover {
-    color: var(--accent-color) !important;
-    transform: translateY(-1px);
-}
+    .nav-item {
+        margin: 0.2rem 0;
+    }
 
-.navbar-nav .nav-link i {
-    margin-right: 5px;
-    font-size: 1rem;
-}
+    .nav-item:not(:last-child)::after {
+        display: none;
+    }
 
-.nav-divider {
-    padding: 0 10px;
-}
+    .nav-item:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
 
-.nav-separator {
-    height: 24px;
-    width: 1px;
-    background-color: rgba(255, 255, 255, 0.3);
-    display: block;
+    .nav-link {
+        padding: 0.8rem 1rem !important;
+    }
+
+    .nav-link i {
+        width: 20px;
+        text-align: center;
+        margin-right: 1rem;
+    }
 }
 
 /* Home Section */
 #home {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 120px 0 60px;
-    background: var(--primary-color);
-    position: relative;
+    color: white;
+    text-align: center;
+    padding: 6rem 0;
 }
 
 #home img {
@@ -138,28 +164,31 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Profile Image Styles */
 .profile-wrapper {
-    display: flex;
-    justify-content: center;
     width: 100%;
-    margin-bottom: 2rem;
+    max-width: 300px;
+    margin: 0 auto 2rem;
+    padding: 0;
 }
 
 .profile-img-container {
-    width: 250px;
-    height: 250px;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Creates a perfect square */
     border-radius: 50%;
     overflow: hidden;
     background: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border: 4px solid rgba(255, 255, 255, 0.9);
-    margin: 0 auto;
 }
 
 .profile-img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
+    object-position: center 20%;
     transition: transform 0.3s ease;
 }
 
@@ -168,24 +197,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Responsive Sizes */
-@media (max-width: 1200px) {
-    .profile-img-container {
-        width: 220px;
-        height: 220px;
+@media (min-width: 1200px) {
+    .profile-wrapper {
+        max-width: 280px;
     }
 }
 
 @media (max-width: 991px) {
-    .profile-img-container {
-        width: 200px;
-        height: 200px;
+    .profile-wrapper {
+        max-width: 240px;
     }
 }
 
 @media (max-width: 767px) {
-    .profile-img-container {
-        width: 180px;
-        height: 180px;
+    .profile-wrapper {
+        max-width: 200px;
+        margin: 1rem auto;
     }
     
     #home {
@@ -194,9 +221,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 575px) {
-    .profile-img-container {
-        width: 160px;
-        height: 160px;
+    .profile-wrapper {
+        max-width: 180px;
     }
     
     #home {
@@ -411,49 +437,6 @@ section:nth-child(even) {
     background-color: var(--primary-color);
 }
 
-/* Download CV Button */
-.cv-download-btn {
-    background: transparent;
-    border: 2px solid var(--accent-color);
-    border-radius: 20px;
-    padding: 6px 16px !important;
-    color: var(--accent-color) !important;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.cv-download-btn:hover {
-    background: var(--accent-color);
-    color: white !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
-}
-
-.cv-download-btn i {
-    transition: transform 0.3s ease;
-}
-
-.cv-download-btn:hover i {
-    transform: translateY(2px);
-}
-
-#downloadCV {
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-#downloadCV:hover {
-    color: var(--accent-color) !important;
-}
-
-#downloadCV i {
-    transition: transform 0.3s ease;
-}
-
-#downloadCV:hover i {
-    transform: translateY(2px);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
@@ -504,16 +487,6 @@ section:nth-child(even) {
 
     .card-body {
         padding: 1.25rem;
-    }
-}
-
-@media (max-width: 991px) {
-    .nav-divider {
-        display: none;
-    }
-    
-    .cv-download-btn {
-        margin: 10px 15px;
     }
 }
 
