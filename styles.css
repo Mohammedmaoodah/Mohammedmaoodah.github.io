@@ -437,6 +437,41 @@ section:nth-child(even) {
     background-color: var(--primary-color);
 }
 
+/* Download CV Button */
+.download-cv-container {
+    margin-top: 2rem;
+}
+
+.download-cv {
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+}
+
+.download-cv:hover {
+    background-color: white;
+    color: var(--primary-color) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.download-cv i {
+    transition: transform 0.3s ease;
+}
+
+.download-cv:hover i {
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .download-cv {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
