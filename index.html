@@ -13,10 +13,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="styles.css" rel="stylesheet">
-    <!-- html2pdf.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <!-- CV Generator -->
-    <script src="cv-generator.js" defer></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -71,6 +67,9 @@
                         </a>
                     </li>
                 </ul>
+                <button class="btn btn-cv ms-3" onclick="generateCV()">
+                    <i class="fas fa-download me-2"></i>Download CV
+                </button>
             </div>
         </div>
     </nav>
@@ -85,19 +84,12 @@
             </div>
             <h1 class="display-4">Mohammed Maoodah</h1>
             <p class="lead mb-3" id="tagline">Logistics Officer at World Food Programme</p>
-            <div class="download-cv-container mt-4">
-                <button id="downloadCV" class="btn btn-outline-light btn-lg download-cv">
-                    <i class="fas fa-file-download me-2"></i>Download CV
-                </button>
-            </div>
-            <div class="social-icons mt-4">
-                <a href="https://linkedin.com/in/mohammedmaoodah" target="_blank" class="text-white mx-2">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:contact@example.com" class="text-white mx-2">
+            <p class="subtitle mb-4">Specializing in Humanitarian Logistics & Information Technology</p>
+            <div class="social-links">
+                <a href="mailto:Mohammed.Maoodah@wfp.org" class="btn-social" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="tel:+1234567890" class="text-white mx-2">
+                <a href="tel:+967-737891227" class="btn-social" title="Phone">
                     <i class="fas fa-phone"></i>
                 </a>
             </div>
@@ -107,23 +99,14 @@
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-heading">About Me</h2>
+            <h2 class="section-heading">Professional Overview</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <p class="lead">
-                        Dedicated Logistics Officer with a passion for optimizing supply chain operations and implementing innovative solutions.
-                        Currently serving at the World Food Programme, where I contribute to humanitarian logistics and emergency response operations.
-                    </p>
-                    <p>
-                        With extensive experience in both logistics and IT, I specialize in:
-                    </p>
-                    <ul class="about-list">
-                        <li>Supply Chain Management</li>
-                        <li>Warehouse Operations</li>
-                        <li>Emergency Response</li>
-                        <li>IT Systems Integration</li>
-                        <li>Process Optimization</li>
-                    </ul>
+                    <div class="about-content text-center">
+                        <p class="lead">
+                            As a Logistics Officer at the World Food Programme (WFP), I bring over 12 years of expertise in humanitarian logistics and information technology. My role combines advanced technical knowledge with strategic operational management, focusing on optimizing supply chain efficiency and implementing innovative solutions for humanitarian assistance delivery.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -139,16 +122,61 @@
                         <div class="card-body">
                             <h3 class="card-title h4">
                                 <i class="fas fa-boxes text-primary me-2"></i>
-                                Logistics Officer
+                                Logistics Officer - Commodity Accounting Unit
                             </h3>
-                            <p class="text-muted">World Food Programme | 2021 - Present</p>
-                            <ul class="experience-list">
-                                <li>Managing end-to-end supply chain operations for humanitarian aid distribution</li>
-                                <li>Coordinating with multiple stakeholders to ensure efficient delivery of supplies</li>
-                                <li>Implementing and maintaining logistics management systems</li>
-                                <li>Training and supervising logistics staff</li>
-                                <li>Developing and implementing standard operating procedures</li>
+                            <h6 class="card-subtitle mb-3 text-muted">World Food Programme (WFP) Yemen | 2015 - Present</h6>
+                            <ul class="achievement-list">
+                                <li>
+                                    <i class="fas fa-database text-primary me-2"></i>
+                                    Manage end-to-end commodity tracking and reporting for WFP Yemen's food assistance operations, handling over 200,000 MT of food commodities annually
+                                </li>
+                                <li>
+                                    <i class="fas fa-sync text-primary me-2"></i>
+                                    Lead monthly reconciliation processes between LESS (Logistics Execution Support System) and COMET, ensuring 99.9% data accuracy across systems
+                                </li>
+                                <li>
+                                    <i class="fas fa-chart-line text-primary me-2"></i>
+                                    Conduct pipeline analysis and commodity tracking for 13 governorates, optimizing food distribution channels and reducing losses by 15%
+                                </li>
+                                <li>
+                                    <i class="fas fa-tasks text-primary me-2"></i>
+                                    Oversee Commodity Management Procedures (CMP) implementation, ensuring compliance with WFP's standard operating procedures
+                                </li>
+                                <li>
+                                    <i class="fas fa-file-alt text-primary me-2"></i>
+                                    Generate and analyze weekly/monthly commodity reports for senior management, donors, and stakeholders
+                                </li>
+                                <li>
+                                    <i class="fas fa-truck text-primary me-2"></i>
+                                    Coordinate with shipping, procurement, and field offices to track commodity movements from port to final delivery points
+                                </li>
+                                <li>
+                                    <i class="fas fa-tools text-primary me-2"></i>
+                                    Developed automated tools for stock reconciliation, reducing processing time by 40% and minimizing human error
+                                </li>
+                                <li>
+                                    <i class="fas fa-user-check text-primary me-2"></i>
+                                    Train and mentor field staff on commodity accounting procedures and systems (LESS, COMET, WINGS)
+                                </li>
+                                <li>
+                                    <i class="fas fa-balance-scale text-primary me-2"></i>
+                                    Manage loss reporting and documentation, maintaining comprehensive audit trails for commodity transactions
+                                </li>
+                                <li>
+                                    <i class="fas fa-handshake text-primary me-2"></i>
+                                    Collaborate with cooperating partners to ensure accurate and timely distribution reporting
+                                </li>
                             </ul>
+                            <div class="mt-4">
+                                <h5 class="h6 text-primary mb-3">Key Systems & Tools:</h5>
+                                <span class="badge bg-light text-dark me-2 mb-2">LESS</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">COMET</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">WINGS</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">SAP</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">MS Excel (Advanced)</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">Power BI</span>
+                                <span class="badge bg-light text-dark me-2 mb-2">SharePoint</span>
+                            </div>
                         </div>
                     </div>
                     <div class="card">
@@ -157,12 +185,24 @@
                                 <i class="fas fa-network-wired text-primary me-2"></i>
                                 Logistics Supervisor and IT Manager
                             </h3>
-                            <p class="text-muted">Previous Organization | 2018 - 2021</p>
-                            <ul class="experience-list">
-                                <li>Supervised warehouse operations and inventory management</li>
-                                <li>Managed IT infrastructure and systems integration</li>
-                                <li>Implemented automation solutions for logistics processes</li>
-                                <li>Reduced operational costs by 25% through process optimization</li>
+                            <h6 class="card-subtitle mb-3 text-muted">ALNADA Company for General Services (NCGS) | 2010 - 2015</h6>
+                            <ul class="achievement-list">
+                                <li>
+                                    <i class="fas fa-sitemap text-primary me-2"></i>
+                                    Managed integrated logistics operations while overseeing IT infrastructure for multiple projects
+                                </li>
+                                <li>
+                                    <i class="fas fa-chart-bar text-primary me-2"></i>
+                                    Implemented quality management systems resulting in 25% improvement in operational efficiency
+                                </li>
+                                <li>
+                                    <i class="fas fa-users-cog text-primary me-2"></i>
+                                    Led cross-functional teams of 15+ members to achieve operational excellence
+                                </li>
+                                <li>
+                                    <i class="fas fa-laptop-code text-primary me-2"></i>
+                                    Developed and maintained company's IT systems and networks
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -174,90 +214,110 @@
     <!-- Skills Section -->
     <section id="skills" class="bg-light">
         <div class="container">
-            <h2 class="section-heading">Skills & Expertise</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="skill-category mb-4">
-                                <h3 class="h5">
-                                    <i class="fas fa-truck text-primary me-2"></i>
-                                    Logistics & Supply Chain
-                                </h3>
-                                <ul class="skill-list">
-                                    <li>Supply Chain Management</li>
-                                    <li>Warehouse Operations</li>
-                                    <li>Inventory Management</li>
-                                    <li>Transportation Management</li>
-                                    <li>Emergency Response</li>
-                                </ul>
-                            </div>
-                            <div class="skill-category mb-4">
-                                <h3 class="h5">
-                                    <i class="fas fa-users text-primary me-2"></i>
-                                    Leadership
-                                </h3>
-                                <ul class="skill-list">
-                                    <li>Team Management</li>
-                                    <li>Training & Development</li>
-                                    <li>Strategic Planning</li>
-                                    <li>Stakeholder Management</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="skill-category mb-4">
-                                <h3 class="h5">
-                                    <i class="fas fa-laptop-code text-primary me-2"></i>
-                                    Technical Skills
-                                </h3>
-                                <ul class="skill-list">
-                                    <li>Logistics Management Systems</li>
-                                    <li>ERP Systems</li>
-                                    <li>Data Analysis</li>
-                                    <li>Process Automation</li>
-                                    <li>IT Infrastructure Management</li>
-                                </ul>
-                            </div>
-                            <div class="skill-category mb-4">
-                                <h3 class="h5">
-                                    <i class="fas fa-chart-line text-primary me-2"></i>
-                                    Operations
-                                </h3>
-                                <ul class="skill-list">
-                                    <li>Process Optimization</li>
-                                    <li>Quality Control</li>
-                                    <li>Risk Management</li>
-                                    <li>Performance Monitoring</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+            <h2 class="section-heading">Professional Skills</h2>
+            <div class="skills-container">
+                <!-- Logistics & Supply Chain -->
+                <div class="skill-category">
+                    <h3 class="h5 mb-4">
+                        <i class="fas fa-truck-loading text-primary me-2"></i>
+                        Logistics & Supply Chain
+                    </h3>
+                    <ul class="skill-list">
+                        <li>
+                            <i class="fas fa-boxes text-primary me-2"></i>
+                            Commodity Management & Tracking
+                        </li>
+                        <li>
+                            <i class="fas fa-warehouse text-primary me-2"></i>
+                            Warehouse Operations
+                        </li>
+                        <li>
+                            <i class="fas fa-route text-primary me-2"></i>
+                            Supply Chain Optimization
+                        </li>
+                        <li>
+                            <i class="fas fa-clipboard-check text-primary me-2"></i>
+                            Quality Control & Compliance
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2 class="section-heading">Education</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h3 class="card-title h4">
-                                <i class="fas fa-graduation-cap text-primary me-2"></i>
-                                Bachelor's Degree in Logistics Management
-                            </h3>
-                            <p class="text-muted">University Name | 2014 - 2018</p>
-                            <ul class="education-list">
-                                <li>Specialized in Supply Chain Management</li>
-                                <li>Graduated with Honors</li>
-                                <li>Led student logistics association</li>
-                            </ul>
-                        </div>
-                    </div>
+                <!-- Technical Systems -->
+                <div class="skill-category">
+                    <h3 class="h5 mb-4">
+                        <i class="fas fa-laptop-code text-primary me-2"></i>
+                        Technical Systems
+                    </h3>
+                    <ul class="skill-list">
+                        <li>
+                            <i class="fas fa-database text-primary"></i>
+                            LESS System Management
+                        </li>
+                        <li>
+                            <i class="fas fa-project-diagram text-primary"></i>
+                            COMET Operations
+                        </li>
+                        <li>
+                            <i class="fas fa-cogs text-primary"></i>
+                            SAP & WINGS Systems
+                        </li>
+                        <li>
+                            <i class="fas fa-chart-bar text-primary"></i>
+                            Power BI Analytics
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Data Management -->
+                <div class="skill-category">
+                    <h3 class="h5 mb-4">
+                        <i class="fas fa-table text-primary me-2"></i>
+                        Data Management
+                    </h3>
+                    <ul class="skill-list">
+                        <li>
+                            <i class="fas fa-file-excel text-primary"></i>
+                            Advanced Excel
+                        </li>
+                        <li>
+                            <i class="fas fa-database text-primary"></i>
+                            Database Systems
+                        </li>
+                        <li>
+                            <i class="fas fa-chart-line text-primary"></i>
+                            Data Analysis
+                        </li>
+                        <li>
+                            <i class="fas fa-sync text-primary"></i>
+                            System Integration
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Project Management -->
+                <div class="skill-category">
+                    <h3 class="h5 mb-4">
+                        <i class="fas fa-tasks text-primary me-2"></i>
+                        Project Management
+                    </h3>
+                    <ul class="skill-list">
+                        <li>
+                            <i class="fas fa-users-cog text-primary me-2"></i>
+                            Team Leadership & Training
+                        </li>
+                        <li>
+                            <i class="fas fa-file-alt text-primary me-2"></i>
+                            Documentation & Reporting
+                        </li>
+                        <li>
+                            <i class="fas fa-handshake text-primary me-2"></i>
+                            Stakeholder Management
+                        </li>
+                        <li>
+                            <i class="fas fa-bullseye text-primary me-2"></i>
+                            Strategic Planning
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -269,30 +329,66 @@
             <h2 class="section-heading">Professional Certifications</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="certification-grid">
-                        <div class="certification-item">
-                            <i class="fas fa-certificate text-primary mb-3"></i>
-                            <h3 class="h5">CILT</h3>
-                            <p class="text-muted">Chartered Institute of Logistics and Transport</p>
-                            <p class="small">2020</p>
-                        </div>
-                        <div class="certification-item">
-                            <i class="fas fa-award text-primary mb-3"></i>
-                            <h3 class="h5">PMP</h3>
-                            <p class="text-muted">Project Management Professional</p>
-                            <p class="small">2019</p>
-                        </div>
-                        <div class="certification-item">
-                            <i class="fas fa-medal text-primary mb-3"></i>
-                            <h3 class="h5">SCOP</h3>
-                            <p class="text-muted">Supply Chain Operations Professional</p>
-                            <p class="small">2021</p>
-                        </div>
-                        <div class="certification-item">
-                            <i class="fas fa-star text-primary mb-3"></i>
-                            <h3 class="h5">ITIL</h3>
-                            <p class="text-muted">IT Service Management</p>
-                            <p class="small">2020</p>
+                    <ul class="certification-list">
+                        <li>
+                            <i class="fab fa-google text-primary"></i>
+                            <div class="cert-content">
+                                <span class="cert-name">Google Analytics Professional Certification</span>
+                                <span class="cert-date">November 2023 | Google</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-chart-line text-primary"></i>
+                            <div class="cert-content">
+                                <span class="cert-name">Advanced Monitoring & Evaluation in Humanitarian Operations</span>
+                                <span class="cert-date">November 2023 | International Rescue Committee</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-truck text-primary"></i>
+                            <div class="cert-content">
+                                <span class="cert-name">Advanced Supply Chain & Procurement Management</span>
+                                <span class="cert-date">November 2023 | DisasterReady</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-box text-primary"></i>
+                            <div class="cert-content">
+                                <span class="cert-name">Certified Humanitarian Logistics Professional</span>
+                                <span class="cert-date">November 2023 | Fritz Institute/CILT</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-tasks text-primary"></i>
+                            <div class="cert-content">
+                                <span class="cert-name">Project Management Professional (PMP) Certification</span>
+                                <span class="cert-date">November 2023 | Cornerstone OnDemand Foundation</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-shield-alt text-primary"></i>
+                            <div class="cert-content">
+                                <span class="cert-name">Ethics & Standards in Humanitarian Operations</span>
+                                <span class="cert-date">October 2023 | World Food Programme</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Education & Professional Development</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Bachelor's Degree in Information Systems</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Sana'a University | 2008-2009</h6>
+                            <p class="card-text">Graduated with Distinction (82.74%)</p>
                         </div>
                     </div>
                 </div>
@@ -301,22 +397,23 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="section-heading">Contact Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
+            <h2 class="text-center mb-4">Contact Information</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
                     <div class="contact-info text-center">
-                        <p class="lead">
-                            I'm always interested in hearing about new opportunities and challenges.
-                        </p>
-                        <div class="contact-methods mt-4">
-                            <a href="mailto:contact@example.com" class="btn btn-primary me-3">
-                                <i class="fas fa-envelope me-2"></i>Email Me
-                            </a>
-                            <a href="https://linkedin.com/in/mohammedmaoodah" target="_blank" class="btn btn-primary">
-                                <i class="fab fa-linkedin me-2"></i>Connect on LinkedIn
-                            </a>
+                        <div class="contact-item mb-3">
+                            <i class="fas fa-envelope me-2"></i>
+                            <span>Mohammed.Maoodah@wfp.org</span>
+                        </div>
+                        <div class="contact-item mb-3">
+                            <i class="fas fa-phone me-2"></i>
+                            <span>+967-737891227</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            <span>Mojahed Street Next to Senan Center, Sanaa, Yemen</span>
                         </div>
                     </div>
                 </div>
@@ -331,7 +428,10 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS and dependencies -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -438,37 +438,34 @@ section:nth-child(even) {
 }
 
 /* Download CV Button */
-.download-cv-container {
-    margin-top: 2rem;
-}
-
-.download-cv {
-    padding: 0.8rem 2rem;
+.btn-cv {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
     font-weight: 500;
-    letter-spacing: 0.5px;
-    border: 2px solid white;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.download-cv:hover {
-    background-color: white;
-    color: var(--primary-color) !important;
+.btn-cv:hover {
+    background-color: #2980b9;
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.download-cv i {
-    transition: transform 0.3s ease;
+.btn-cv i {
+    font-size: 0.85rem;
 }
 
-.download-cv:hover i {
-    transform: translateY(-1px);
-}
-
-@media (max-width: 768px) {
-    .download-cv {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.9rem;
+@media (max-width: 991px) {
+    .btn-cv {
+        margin: 1rem 0;
+        width: 100%;
+        border-radius: 8px;
     }
 }
 
