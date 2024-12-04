@@ -102,18 +102,25 @@ function generateCV() {
     const title = document.querySelector('#tagline').textContent;
     const about = document.querySelector('#about p').textContent;
     
+    // Get education details
+    const education = Array.from(document.querySelectorAll('#education .education-item')).map(edu => ({
+        degree: edu.querySelector('h5').textContent,
+        institution: edu.querySelector('h6').textContent,
+        date: edu.querySelector('small').textContent,
+        details: edu.querySelector('p') ? edu.querySelector('p').textContent : ''
+    }));
+
     // Get skills with categories
-    const skillsSection = document.querySelector('#skills');
-    const skillCategories = Array.from(skillsSection.querySelectorAll('h4')).map(category => ({
-        name: category.textContent,
-        skills: Array.from(category.nextElementSibling.querySelectorAll('li')).map(skill => skill.textContent)
+    const skillCategories = Array.from(document.querySelectorAll('#skills .skill-category')).map(category => ({
+        name: category.querySelector('h4').textContent,
+        skills: Array.from(category.querySelectorAll('li')).map(skill => skill.textContent.trim())
     }));
 
     // Get detailed certifications
     const certifications = Array.from(document.querySelectorAll('#certifications .certification-item')).map(cert => ({
         name: cert.querySelector('h5').textContent,
-        date: cert.querySelector('small').textContent,
-        issuer: cert.querySelector('p').textContent
+        issuer: cert.querySelector('p').textContent,
+        date: cert.querySelector('small').textContent
     }));
 
     // Get contact information
@@ -124,46 +131,73 @@ function generateCV() {
 
     // Create professional CV HTML structure
     cvContent.innerHTML = `
-        <div style="padding: 40px; max-width: 800px; margin: 0 auto; font-family: 'Calibri', sans-serif; color: #333;">
+        <div style="padding: 40px 50px; max-width: 850px; margin: 0 auto; font-family: 'Calibri', sans-serif; color: #333; line-height: 1.6;">
             <!-- Header -->
-            <div style="text-align: left; margin-bottom: 30px; border-bottom: 3px solid #2c3e50; padding-bottom: 20px;">
-                <h1 style="color: #2c3e50; margin: 0; font-size: 28px; text-transform: uppercase;">${name}</h1>
-                <h2 style="color: #34495e; margin: 5px 0; font-size: 20px;">${title}</h2>
-                <div style="margin-top: 15px; font-size: 14px;">
-                    <p style="margin: 3px 0;"><strong>Email:</strong> ${email}</p>
-                    <p style="margin: 3px 0;"><strong>Phone:</strong> ${phone}</p>
-                    <p style="margin: 3px 0;"><strong>Location:</strong> ${location}</p>
-                    <p style="margin: 3px 0;"><strong>LinkedIn:</strong> ${linkedin}</p>
+            <div style="border-bottom: 2px solid #2c3e50; padding-bottom: 20px; margin-bottom: 25px;">
+                <h1 style="color: #2c3e50; margin: 0; font-size: 32px; text-transform: uppercase; letter-spacing: 2px;">${name}</h1>
+                <h2 style="color: #34495e; margin: 8px 0; font-size: 22px; font-weight: normal;">${title}</h2>
+                <div style="margin-top: 15px; font-size: 15px; display: flex; flex-wrap: wrap; gap: 15px;">
+                    <span><i class="fas fa-envelope"></i> ${email}</span>
+                    <span><i class="fas fa-phone"></i> ${phone}</span>
+                    <span><i class="fas fa-map-marker-alt"></i> ${location}</span>
+                    <span><i class="fab fa-linkedin"></i> ${linkedin}</span>
                 </div>
             </div>
 
             <!-- Professional Summary -->
             <div style="margin-bottom: 25px;">
-                <h3 style="color: #2c3e50; margin: 0 0 10px 0; font-size: 18px; text-transform: uppercase; border-bottom: 2px solid #3498db;">Professional Summary</h3>
+                <h3 style="color: #2c3e50; margin: 0 0 12px 0; font-size: 20px; text-transform: uppercase; border-bottom: 2px solid #3498db; padding-bottom: 5px;">
+                    Professional Summary
+                </h3>
                 <p style="margin: 0; line-height: 1.6; text-align: justify;">${about}</p>
             </div>
 
-            <!-- Skills -->
+            <!-- Education -->
             <div style="margin-bottom: 25px;">
-                <h3 style="color: #2c3e50; margin: 0 0 10px 0; font-size: 18px; text-transform: uppercase; border-bottom: 2px solid #3498db;">Professional Skills</h3>
-                ${skillCategories.map(category => `
+                <h3 style="color: #2c3e50; margin: 0 0 12px 0; font-size: 20px; text-transform: uppercase; border-bottom: 2px solid #3498db; padding-bottom: 5px;">
+                    Education
+                </h3>
+                ${education.map(edu => `
                     <div style="margin-bottom: 15px;">
-                        <h4 style="color: #34495e; margin: 10px 0 5px 0; font-size: 16px;">${category.name}</h4>
-                        <p style="margin: 0; line-height: 1.4;">${category.skills.join(' • ')}</p>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div>
+                                <h4 style="color: #2c3e50; margin: 0; font-size: 17px;">${edu.degree}</h4>
+                                <h5 style="color: #34495e; margin: 5px 0; font-size: 16px; font-weight: normal;">${edu.institution}</h5>
+                            </div>
+                            <span style="color: #666; font-size: 15px;">${edu.date}</span>
+                        </div>
+                        ${edu.details ? `<p style="margin: 5px 0 0 0; color: #555;">${edu.details}</p>` : ''}
                     </div>
                 `).join('')}
             </div>
 
-            <!-- Certifications -->
+            <!-- Professional Skills -->
             <div style="margin-bottom: 25px;">
-                <h3 style="color: #2c3e50; margin: 0 0 10px 0; font-size: 18px; text-transform: uppercase; border-bottom: 2px solid #3498db;">Professional Certifications</h3>
+                <h3 style="color: #2c3e50; margin: 0 0 12px 0; font-size: 20px; text-transform: uppercase; border-bottom: 2px solid #3498db; padding-bottom: 5px;">
+                    Professional Skills
+                </h3>
+                ${skillCategories.map(category => `
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #34495e; margin: 0 0 8px 0; font-size: 17px;">${category.name}</h4>
+                        <p style="margin: 0; color: #555; line-height: 1.4;">
+                            ${category.skills.join(' • ')}
+                        </p>
+                    </div>
+                `).join('')}
+            </div>
+
+            <!-- Professional Certifications -->
+            <div style="margin-bottom: 25px;">
+                <h3 style="color: #2c3e50; margin: 0 0 12px 0; font-size: 20px; text-transform: uppercase; border-bottom: 2px solid #3498db; padding-bottom: 5px;">
+                    Professional Certifications
+                </h3>
                 ${certifications.map(cert => `
                     <div style="margin-bottom: 12px;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 3px;">
-                            <strong style="color: #34495e;">${cert.name}</strong>
-                            <span style="color: #666;">${cert.date}</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h4 style="color: #2c3e50; margin: 0; font-size: 17px;">${cert.name}</h4>
+                            <span style="color: #666; font-size: 15px;">${cert.date}</span>
                         </div>
-                        <p style="margin: 0; color: #666; font-style: italic;">${cert.issuer}</p>
+                        <p style="margin: 5px 0 0 0; color: #555; font-style: italic;">${cert.issuer}</p>
                     </div>
                 `).join('')}
             </div>
@@ -172,7 +206,7 @@ function generateCV() {
 
     // PDF options for professional output
     const opt = {
-        margin: [0.5, 0.75, 0.5, 0.75], // [top, right, bottom, left]
+        margin: [0.6, 0.8, 0.6, 0.8],
         filename: 'Mohammed_Maoodah_CV.pdf',
         image: { type: 'jpeg', quality: 1 },
         html2canvas: { 
