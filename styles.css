@@ -269,26 +269,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Download CV Button */
 .btn-cv {
-    background: var(--accent-color);
-    color: white !important;
-    padding: 1rem 2rem;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    border: none;
-    box-shadow: 0 4px 15px rgba(57, 73, 171, 0.3);
-    text-decoration: none;
+    white-space: nowrap;
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    letter-spacing: 0.5px;
+    gap: 0.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: var(--transition);
+    border: none;
 }
 
 .btn-cv:hover {
-    background: #4527a0;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(57, 73, 171, 0.4);
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
 }
 
 .btn-cv i {
