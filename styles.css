@@ -92,12 +92,13 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 6px;
     display: flex;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .nav-link i {
-    margin-right: 0.5rem;
-    font-size: 0.9rem;
-    transition: transform 0.3s ease;
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
 }
 
 .nav-link:hover {
@@ -165,6 +166,7 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
     background-size: cover;
+    opacity: 0.4;
 }
 
 #home img {
@@ -182,30 +184,27 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-/* Profile Image Styles */
+/* Profile Image */
 .profile-wrapper {
     width: 100%;
-    max-width: 250px;
-    margin: 0 auto 2.5rem;
-    padding: 0;
+    max-width: 280px;
+    margin: 0 auto 3rem;
+    position: relative;
 }
 
 .profile-img-container {
-    position: relative;
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     overflow: hidden;
     background: white;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    border: 4px solid rgba(255, 255, 255, 0.9);
-    margin: 0 auto 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 5px solid rgba(255, 255, 255, 0.95);
+    margin: 0 auto;
+    position: relative;
 }
 
 .profile-img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -217,37 +216,184 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.05);
 }
 
-/* Responsive Sizes */
-@media (min-width: 1200px) {
-    .profile-wrapper {
-        max-width: 280px;
-    }
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 2rem 0;
 }
 
-@media (max-width: 991px) {
+.social-link,
+.btn-social {
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.8rem;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 500;
+}
+
+.social-link:hover,
+.btn-social:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-social {
+    padding: 1rem;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link i,
+.btn-social i {
+    font-size: 1.25rem;
+}
+
+.social-link span {
+    font-size: 1rem;
+}
+
+/* Download CV Button */
+.btn-cv {
+    background: var(--accent-color);
+    color: white !important;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 4px 15px rgba(57, 73, 171, 0.3);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-cv:hover {
+    background: #4527a0;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(57, 73, 171, 0.4);
+}
+
+.btn-cv i {
+    font-size: 1.1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
     .profile-wrapper {
         max-width: 240px;
+        margin: 0 auto 2rem;
+    }
+
+    .profile-img-container {
+        width: 240px;
+        height: 240px;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .social-link,
+    .btn-social {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .btn-social {
+        padding: 0.8rem;
+        width: 42px;
+        height: 42px;
+    }
+
+    .btn-cv {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
     }
 }
 
-@media (max-width: 767px) {
-    .profile-wrapper {
-        max-width: 200px;
-        margin: 1rem auto;
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.95rem;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+
+    .skill-category {
+        padding: 1.25rem;
+    }
+
+    .navbar-collapse {
+        background: var(--primary-color);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+
+    #home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 100vh;
+        padding-top: 100px;
     }
     
-    #home {
-        padding: 100px 20px 60px;
+    .skill-list li {
+        padding-right: 0.5rem;
     }
 }
 
-@media (max-width: 575px) {
-    .profile-wrapper {
-        max-width: 180px;
+@media (max-width: 576px) {
+    .display-4 {
+        font-size: 2rem;
     }
-    
-    #home {
-        padding: 80px 15px 40px;
+
+    .section-heading {
+        font-size: 1.8rem;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar {
+        display: none;
+    }
+
+    section {
+        page-break-inside: avoid;
+    }
+
+    body {
+        color: black;
     }
 }
 
@@ -434,134 +580,4 @@ section:nth-child(even) {
     color: var(--accent-color);
     margin-right: 10px;
     font-size: 1.2rem;
-}
-
-/* Social Links */
-.social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.social-link,
-.btn-social {
-    color: white;
-    text-decoration: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.social-link:hover,
-.btn-social:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    color: white;
-}
-
-.btn-social {
-    padding: 0.8rem;
-    border-radius: 50%;
-}
-
-.social-link i,
-.btn-social i {
-    font-size: 1.2rem;
-}
-
-/* Download CV Button */
-.btn-cv {
-    background: var(--accent-color);
-    color: white !important;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: none;
-    box-shadow: 0 4px 15px rgba(57, 73, 171, 0.3);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.btn-cv:hover {
-    background: #4527a0;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(57, 73, 171, 0.4);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        font-size: 0.95rem;
-    }
-
-    section {
-        padding: 3rem 0;
-    }
-
-    .card-body {
-        padding: 1.25rem;
-    }
-
-    .skill-category {
-        padding: 1.25rem;
-    }
-
-    .navbar-collapse {
-        background: var(--primary-color);
-        padding: 1rem;
-        border-radius: 8px;
-        margin-top: 1rem;
-    }
-
-    #home {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        min-height: 100vh;
-        padding-top: 100px;
-    }
-    
-    .skill-list li {
-        padding-right: 0.5rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .display-4 {
-        font-size: 2rem;
-    }
-
-    .section-heading {
-        font-size: 1.8rem;
-    }
-
-    .card-body {
-        padding: 1.25rem;
-    }
-}
-
-/* Print Styles */
-@media print {
-    .navbar {
-        display: none;
-    }
-
-    section {
-        page-break-inside: avoid;
-    }
-
-    body {
-        color: black;
-    }
 }
