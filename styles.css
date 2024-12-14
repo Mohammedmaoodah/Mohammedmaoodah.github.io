@@ -575,3 +575,24 @@ section:nth-child(even) {
     margin-right: 10px;
     font-size: 1.2rem;
 }
+
+/* Footer */
+.visitor-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.visitor-counter img {
+    height: 24px;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
+.visitor-counter p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
