@@ -578,10 +578,7 @@ section:nth-child(even) {
 
 /* Footer */
 .visitor-counter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .visitor-counter img {
@@ -591,8 +588,15 @@ section:nth-child(even) {
     padding: 2px 8px;
 }
 
-.visitor-counter p {
+.visitor-counter span {
     font-size: 0.9rem;
-    opacity: 0.9;
-    margin-top: 0.5rem;
+}
+
+@media (max-width: 576px) {
+    footer .container .d-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
 }
