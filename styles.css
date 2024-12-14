@@ -1,13 +1,14 @@
 /* Professional Website Styling */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #34495e;
-    --accent-color: #3498db;
-    --text-color: #2c3e50;
-    --light-bg: #f8f9fa;
+    --primary-color: #1a237e;
+    --secondary-color: #283593;
+    --accent-color: #3949ab;
+    --text-color: #212121;
+    --light-bg: #f5f5f5;
     --transition: all 0.3s ease;
-    --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    --hover-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    --box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --hover-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
 }
 
 /* Base Styles */
@@ -50,14 +51,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Navigation */
 .navbar {
-    background-color: var(--primary-color);
+    background-color: rgba(26, 35, 126, 0.98);
+    backdrop-filter: blur(10px);
     padding: 1rem 0;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
 }
 
 .navbar-brand {
-    font-weight: 600;
-    font-size: 1.3rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
 }
 
 .navbar-nav {
@@ -81,11 +85,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 1rem !important;
-    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+    padding: 0.7rem 1.2rem !important;
+    color: rgba(255, 255, 255, 0.95) !important;
     transition: all 0.3s ease;
+    border-radius: 6px;
 }
 
 .nav-link i {
@@ -95,7 +99,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link:hover {
-    color: white !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
 }
 
 .nav-link:hover i {
@@ -137,7 +142,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Home Section */
 #home {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: var(--gradient);
+    position: relative;
+    overflow: hidden;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -145,6 +152,17 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     text-align: center;
     padding: 6rem 0;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.05)" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,208C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+    background-size: cover;
 }
 
 #home img {
@@ -165,8 +183,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Profile Image Styles */
 .profile-wrapper {
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto 2rem;
+    max-width: 250px;
+    margin: 0 auto 2.5rem;
     padding: 0;
 }
 
@@ -177,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50%;
     overflow: hidden;
     background: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     border: 4px solid rgba(255, 255, 255, 0.9);
 }
 
@@ -241,21 +259,24 @@ section:nth-child(even) {
 }
 
 .section-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
     text-align: center;
     margin-bottom: 3rem;
-    color: var(--primary-color);
     position: relative;
+    padding-bottom: 1rem;
 }
 
-.section-heading:after {
+.section-heading::after {
     content: '';
     position: absolute;
-    bottom: -10px;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
+    width: 80px;
+    height: 4px;
     background: var(--accent-color);
+    border-radius: 2px;
 }
 
 /* Cards */
@@ -265,7 +286,6 @@ section:nth-child(even) {
     box-shadow: var(--box-shadow);
     transition: var(--transition);
     overflow: hidden;
-    margin-bottom: 1.5rem;
 }
 
 .card:hover {
@@ -274,13 +294,13 @@ section:nth-child(even) {
 }
 
 .card-body {
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 .card-title {
     color: var(--primary-color);
+    margin-bottom: 1.5rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
 }
 
 .card-subtitle {
@@ -485,22 +505,21 @@ section:nth-child(even) {
 
 /* Download CV Button */
 .btn-cv {
-    background-color: #3498db;
+    background: var(--accent-color);
     color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 50px;
-    font-weight: 500;
-    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: none;
+    box-shadow: 0 4px 15px rgba(57, 73, 171, 0.3);
 }
 
 .btn-cv:hover {
-    background-color: #2980b9;
-    color: white;
+    background: #4527a0;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(57, 73, 171, 0.4);
+    color: white;
 }
 
 .btn-cv i {
