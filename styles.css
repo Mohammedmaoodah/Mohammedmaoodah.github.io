@@ -58,10 +58,24 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 2px 15px rgba(0,0,0,0.08);
 }
 
+.nav-profile-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
 .navbar-brand {
     font-weight: 700;
     font-size: 1.4rem;
     letter-spacing: 0.5px;
+    transition: var(--transition);
+}
+
+.navbar-brand:hover .nav-profile-img {
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
 }
 
 .navbar-nav {
