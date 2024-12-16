@@ -612,48 +612,103 @@ section:nth-child(even) {
 }
 
 /* Footer */
-.visitor-counter {
-    color: rgba(255, 255, 255, 0.9);
+footer {
+    background-color: rgba(44, 62, 80, 0.98);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-content {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright {
+    flex: 1;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.visitor-counter {
     position: absolute;
-    right: 0;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.visitor-counter img {
+.counter-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.counter-wrapper:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.counter-link {
+    display: block;
+    line-height: 0;
+}
+
+.counter-image {
     height: 24px;
-    background-color: #fff;
     border-radius: 4px;
-    padding: 2px 8px;
+    border: none;
 }
 
-.visitor-counter span {
+.counter-text {
+    color: rgba(255, 255, 255, 0.9);
     font-size: 0.9rem;
+    font-weight: 500;
+    padding-right: 0.5rem;
 }
 
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
     .visitor-counter {
         position: static;
         transform: none;
-        justify-content: center;
         margin-top: 1rem;
-    }
-    
-    footer .container {
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        justify-content: center;
+    }
+
+    .counter-wrapper {
+        margin: 0 auto;
+    }
+
+    .copyright {
+        margin-bottom: 0.5rem;
     }
 }
 
-@media (max-width: 576px) {
-    footer .container .d-flex {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1rem;
+@media (max-width: 480px) {
+    .counter-wrapper {
+        padding: 0.4rem;
+    }
+
+    .counter-image {
+        height: 20px;
+    }
+
+    .counter-text {
+        font-size: 0.8rem;
     }
 }
