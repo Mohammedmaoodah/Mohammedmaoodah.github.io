@@ -78,6 +78,62 @@
         ]
     }
     </script>
+    <style>
+        .nav-link.language-switch {
+            color: #fff !important;
+            background: #007bff;
+            border-radius: 20px;
+            padding: 5px 15px !important;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+        .nav-link.language-switch:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+        section {
+            padding-top: 100px;
+            margin-top: -60px;
+        }
+        .section-heading {
+            margin-bottom: 40px;
+        }
+        
+        /* Language Switcher Styles */
+        .language-switcher {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            z-index: 1100;
+            writing-mode: vertical-lr;
+            transform-origin: left center;
+        }
+
+        .language-switcher a {
+            display: flex;
+            align-items: center;
+            padding: 20px 10px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        }
+
+        .language-switcher a:hover {
+            background: var(--secondary-color);
+            padding-right: 15px;
+        }
+
+        .language-switcher i {
+            transform: rotate(-90deg);
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -112,14 +168,8 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#skills">
-                            <i class="fas fa-cogs"></i>
+                            <i class="fas fa-tools"></i>
                             <span>Skills</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Education</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -135,12 +185,17 @@
                         </a>
                     </li>
                 </ul>
-                <button class="btn btn-cv ms-3" onclick="generateCV()">
-                    <i class="fas fa-download me-2"></i>Download CV
-                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <a href="index-ar.html">
+            <i class="fas fa-globe"></i>
+            عربي
+        </a>
+    </div>
 
     <!-- Home Section -->
     <header id="home" class="text-white text-center">
