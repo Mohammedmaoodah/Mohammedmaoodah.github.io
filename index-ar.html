@@ -634,7 +634,7 @@
         .language-switcher a {
             display: flex;
             align-items: center;
-            padding: 20px 10px;
+            padding: 15px 5px;
             background: var(--primary-color);
             color: white;
             text-decoration: none;
@@ -647,12 +647,13 @@
 
         .language-switcher a:hover {
             background: var(--secondary-color);
-            padding-right: 15px;
+            padding-right: 8px;
         }
 
         .language-switcher i {
             transform: rotate(-90deg);
             margin-bottom: 8px;
+            font-size: 0.9rem;
         }
 
         /* Enhanced Hero Section */
@@ -827,6 +828,65 @@
                 margin: 1rem 0;
             }
         }
+
+        /* Social Media Links */
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+            background: var(--accent-color);
+        }
+
+        .social-links .btn-cv {
+            padding: 10px 25px;
+            border-radius: 30px;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .social-links .btn-cv:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .social-links {
+                margin: 15px 0;
+            }
+
+            .social-links a {
+                width: 35px;
+                height: 35px;
+                margin: 0 5px;
+            }
+
+            .social-links .btn-cv {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -835,22 +895,6 @@
         <a href="index.html">
             <i class="fas fa-globe"></i>
             EN
-        </a>
-    </div>
-
-    <!-- Social Media Bar -->
-    <div class="social-media-bar">
-        <a href="https://www.linkedin.com/in/mohammed-maoodah" target="_blank" title="لينكد إن">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="https://wa.me/967775257058" target="_blank" title="واتساب">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="mailto:mohammed.maoodah@gmail.com" title="البريد الإلكتروني">
-            <i class="fas fa-envelope"></i>
-        </a>
-        <a href="tel:+967775257058" title="الهاتف">
-            <i class="fas fa-phone"></i>
         </a>
     </div>
 
@@ -920,6 +964,20 @@
             <h1>محمد معوضه</h1>
             <p class="lead">مسؤول اللوجستيات الأول</p>
             <p class="subtitle">برنامج الأغذية العالمي - اليمن</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mohammed-maoodah" target="_blank" class="social-link linkedin">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:Mohammed.Maoodah@wfp.org" class="social-link" title="البريد الإلكتروني">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="tel:+967-737891227" class="social-link" title="الهاتف">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="https://wa.me/967737891227" target="_blank" class="social-link" title="واتساب">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
             <div class="hero-buttons">
                 <button class="btn btn-cv" onclick="generateCV()">
                     <span>تحميل السيرة الذاتية</span>
